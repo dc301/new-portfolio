@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Deepak Chauhan Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#050816;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  padding:20px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:1000;
+  backdrop-filter:blur(10px);
+  background:rgba(0,0,0,0.2);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+  font-size:28px;
+  font-weight:700;
+}
+
+.logo span{
+  color:#22d3ee;
+}
+
+nav ul{
+  display:flex;
+  gap:40px;
+  list-style:none;
+}
+
+nav ul li a{
+  color:#d1d5db;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+nav ul li a:hover{
+  color:#22d3ee;
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:140px 8%;
+  gap:60px;
+  flex-wrap:wrap;
+}
+
+.hero-text{
+  flex:1;
+}
+
+.tag{
+  color:#22d3ee;
+  letter-spacing:4px;
+  margin-bottom:20px;
+  text-transform:uppercase;
+}
+
+.hero-text h1{
+  font-size:75px;
+  line-height:1.2;
+  margin-bottom:25px;
+}
+
+.hero-text h1 span{
+  color:#22d3ee;
+}
+
+.hero-text p{
+  color:#bdbdbd;
+  line-height:1.9;
+  font-size:18px;
+  max-width:650px;
+  margin-bottom:40px;
+}
+
+.btns{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:16px 38px;
+  background:#22d3ee;
+  color:black;
+  border-radius:16px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:translateY(-5px);
+}
+
+.btn-outline{
+  padding:16px 38px;
+  border:1px solid rgba(255,255,255,0.15);
+  color:white;
+  border-radius:16px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.btn-outline:hover{
+  border-color:#22d3ee;
+  color:#22d3ee;
+}
+
+.stats{
+  display:flex;
+  gap:50px;
+  margin-top:60px;
+}
+
+.stats h2{
+  color:#22d3ee;
+  font-size:40px;
+}
+
+.stats p{
+  margin-top:10px;
+  font-size:15px;
+}
+
+.hero-image{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  position:relative;
+}
+
+.glow{
+  width:350px;
+  height:350px;
+  background:#22d3ee;
+  position:absolute;
+  border-radius:50%;
+  filter:blur(120px);
+  opacity:0.25;
+}
+
+.hero-image img{
+  width:420px;
+  border-radius:35px;
+  position:relative;
+  border:1px solid rgba(255,255,255,0.1);
+}
+
+/* SECTIONS */
+
+section{
+  padding:100px 8%;
+}
+
+.heading{
+  text-align:center;
+  margin-bottom:70px;
+}
+
+.heading p{
+  color:#22d3ee;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  margin-bottom:15px;
+}
+
+.heading h2{
+  font-size:52px;
+}
+
+/* ABOUT */
+
+.about-box{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  padding:60px;
+  border-radius:35px;
+  backdrop-filter:blur(10px);
+}
+
+.about-box p{
+  color:#bdbdbd;
+  line-height:2;
+  font-size:18px;
+}
+
+/* SKILLS */
+
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:25px;
+}
+
+.skill{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  padding:35px;
+  text-align:center;
+  border-radius:25px;
+  transition:0.3s;
+}
+
+.skill:hover{
+  transform:translateY(-10px);
+  border-color:#22d3ee;
+}
+
+.skill h3{
+  font-size:20px;
+}
+
+/* PROJECTS */
+
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:35px;
+}
+
+.card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:35px;
+  overflow:hidden;
+  transition:0.4s;
+}
+
+.card:hover{
+  transform:translateY(-12px);
+  border-color:#22d3ee;
+}
+
+.card img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:35px;
+}
+
+.card-content h3{
+  font-size:28px;
+  margin-bottom:18px;
+}
+
+.card-content p{
+  color:#bdbdbd;
+  line-height:1.8;
+  margin-bottom:25px;
+}
+
+.tech{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:30px;
+}
+
+.tech span{
+  padding:10px 18px;
+  border-radius:50px;
+  background:rgba(34,211,238,0.1);
+  color:#22d3ee;
+  font-size:14px;
+}
+
+.visit{
+  display:inline-block;
+  width:100%;
+  text-align:center;
+  background:#22d3ee;
+  color:black;
+  text-decoration:none;
+  padding:15px;
+  border-radius:16px;
+  font-weight:600;
+}
+
+/* CONTACT */
+
+.contact-box{
+  text-align:center;
+  background:linear-gradient(to right,rgba(34,211,238,0.08),rgba(59,130,246,0.08));
+  border:1px solid rgba(34,211,238,0.2);
+  padding:70px 30px;
+  border-radius:40px;
+}
+
+.contact-box h2{
+  font-size:50px;
+  margin-bottom:25px;
+}
+
+.contact-box p{
+  color:#bdbdbd;
+  max-width:700px;
+  margin:auto;
+  line-height:2;
+  margin-bottom:40px;
+}
+
+/* FOOTER */
+
+footer{
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding:30px;
+  text-align:center;
+  color:#8d8d8d;
+}
+
+/* ANIMATION */
+
+.hidden{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+
+.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  nav ul{
+    display:none;
+  }
+
+  .hero{
+    text-align:center;
+    justify-content:center;
+  }
+
+  .hero-text h1{
+    font-size:50px;
+  }
+
+  .hero-image img{
+    width:100%;
+    max-width:330px;
+  }
+
+  .btns{
+    justify-content:center;
+  }
+
+  .stats{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .heading h2{
+    font-size:38px;
+  }
+
+  .contact-box h2{
+    font-size:38px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+  <div class="logo">
+    Deepak<span>.</span>
+  </div>
+
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-text hidden">
+
+    <p class="tag">
+      Frontend & WordPress Developer
+    </p>
+
+    <h1>
+      Hi, I'm <br>
+      <span>Deepak Chauhan</span>
+    </h1>
+
+    <p>
+      I build modern, responsive and user-friendly websites using
+      HTML, CSS, JavaScript, React, WordPress, Bootstrap and WooCommerce.
+    </p>
+
+    <div class="btns">
+
+      <a href="#projects" class="btn">
+        View Projects
+      </a>
+
+      <a href="https://github.com/dc301" target="_blank" class="btn-outline">
+        GitHub
+      </a>
+
+    </div>
+
+    <div class="stats">
+
+      <div>
+        <h2>5+</h2>
+        <p>Live Projects</p>
+      </div>
+
+      <div>
+        <h2>1+</h2>
+        <p>Years Experience</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="hero-image hidden">
+
+    <div class="glow"></div>
+
+    <img src="deepak.jpg.jpeg" alt="Deepak">
+
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <div class="heading hidden">
+    <p>About Me</p>
+    <h2>Who I Am</h2>
+  </div>
+
+  <div class="about-box hidden">
+
+    <p>
+      I'm a frontend and WordPress developer focused on building modern,
+      responsive and high-performance websites. I have experience working on
+      live client projects including business websites, beauty brands,
+      solar companies and corporate platforms.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+  <div class="heading hidden">
+    <p>Skills</p>
+    <h2>Technologies I Use</h2>
+  </div>
+
+  <div class="skills-grid">
+
+    <div class="skill hidden"><h3>HTML</h3></div>
+    <div class="skill hidden"><h3>CSS</h3></div>
+    <div class="skill hidden"><h3>JavaScript</h3></div>
+    <div class="skill hidden"><h3>React</h3></div>
+    <div class="skill hidden"><h3>Bootstrap</h3></div>
+    <div class="skill hidden"><h3>WordPress</h3></div>
+    <div class="skill hidden"><h3>WooCommerce</h3></div>
+    <div class="skill hidden"><h3>Responsive Design</h3></div>
+
+  </div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+  <div class="heading hidden">
+    <p>Portfolio</p>
+    <h2>Featured Projects</h2>
+  </div>
+
+  <div class="project-grid">
+
+    <!-- CARD -->
+
+    <div class="card hidden">
+
+      <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1200&auto=format&fit=crop">
+
+      <div class="card-content">
+
+        <h3>Brandroot Interiors</h3>
+
+        <p>
+          Modern interior design business website with premium UI.
+        </p>
+
+        <div class="tech">
+          <span>WordPress</span>
+          <span>Elementor</span>
+          <span>Responsive</span>
+        </div>
+
+        <a href="https://brandrootinteriors.com/" target="_blank" class="visit">
+          Visit Website
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- CARD -->
+
+    <div class="card hidden">
+
+      <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop">
+
+      <div class="card-content">
+
+        <h3>Raaf Beauty</h3>
+
+        <p>
+          Beauty and cosmetics website with responsive modern interface.
+        </p>
+
+        <div class="tech">
+          <span>WooCommerce</span>
+          <span>UI Design</span>
+          <span>WordPress</span>
+        </div>
+
+        <a href="https://raafbeauty.com/" target="_blank" class="visit">
+          Visit Website
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- CARD -->
+
+    <div class="card hidden">
+
+      <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop">
+
+      <div class="card-content">
+
+        <h3>Sejwal Solar</h3>
+
+        <p>
+          Professional solar company website with modern business design.
+        </p>
+
+        <div class="tech">
+          <span>Business</span>
+          <span>SEO</span>
+          <span>Responsive</span>
+        </div>
+
+        <a href="https://sejwal.sejwalsolar.in/" target="_blank" class="visit">
+          Visit Website
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- CARD -->
+
+    <div class="card hidden">
+
+      <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop">
+
+      <div class="card-content">
+
+        <h3>Kartavyam</h3>
+
+        <p>
+          Modern service-based responsive website with clean layout.
+        </p>
+
+        <div class="tech">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+        </div>
+
+        <a href="https://kartavyam.whitegravity.in/" target="_blank" class="visit">
+          Visit Website
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- CARD -->
+
+    <div class="card hidden">
+
+      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop">
+
+      <div class="card-content">
+
+        <h3>GVCSPN</h3>
+
+        <p>
+          Corporate business website with optimized frontend design.
+        </p>
+
+        <div class="tech">
+          <span>Bootstrap</span>
+          <span>Responsive</span>
+          <span>WordPress</span>
+        </div>
+
+        <a href="https://gvcspn.com/" target="_blank" class="visit">
+          Visit Website
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+  <div class="contact-box hidden">
+
+    <h2>Let's Build Something Amazing</h2>
+
+    <p>
+      Interested in working together or hiring me for frontend
+      and WordPress development? Let's connect.
+    </p>
+
+    <a href="https://github.com/dc301" target="_blank" class="btn">
+      GitHub Profile
+    </a>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  © 2026 Deepak Chauhan • Frontend & WordPress Developer
+</footer>
+
+<script>
+
+/* SCROLL ANIMATION */
+
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach((entry)=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+const hiddenElements = document.querySelectorAll('.hidden');
+
+hiddenElements.forEach((el)=>observer.observe(el));
+
+</script>
+
+</body>
+</html>
